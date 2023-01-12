@@ -11,10 +11,83 @@
 
     <title>Roulette</title>
 </head>
+
 <body>
+    <header>
+        <nav>
+            <nav class="navbar fixed-top bg-body-tertiary">
+                 <div>
+            <h1>It's roulette time, baby!!</h1>
+                </div>
+                <div class="container-fluid d-flex justify-content-between">
+                      <a class="navbar-brand" href="#">Home</a>
+                    <div class="d-flex">
+                      <a class="navbar-brand px-3" href="#">Bingo</a>
+                      <a class="navbar-brand px-3" href="#">High low</a>
+                      <a class="navbar-brand px-3" href="#">Roulette</a>
+                      <a class="navbar-brand px-3" href="#">Slots</a>
+                     </div>
+                     <li>
+                        <a href="#home">Return to homepage?</a>
+                       </li> 
+                    </nav>
+                 </div>
+                </nav>
+           
+    </header>
+    
+        <section class="roulette-main">
+            <div class="spin-button">
+                <button type="spin">Try your luck!</button>
+            </div>
+            <div class="roulette-img">
+              <img src="rouletteassets/roulette-img/roulette-wheel.webp" alt="roulette wheel placeholder" class="roulette-wheel">
+            </div> 
+            <div class="results-box">
+                
+            </div>   
+           </section>
+        <section class="roulette-rules">
+            <div class="rules-text">
+            <h2>Rule List</h2>
+            <ul>
+                <li>
+                    <p>There are 38 slots on the roulette wheel made up of three colors.</p>
+                </li>
+                <li>
+                    <p>There are 18 black slots, 18 red slots, and two green slots.</p>
+                </li>
+                <li>
+                    <p>Player must choose between the three choices: red, black, or green.</p> 
+                </li>
+                <li>
+                    <p>After player makes selection, they will click 'spin wheel'. The roulette wheel will begin to spin, and the ball will be placed in the wheel.</p>
+                </li>
+                <li>
+                    <p>If the player selected black (for example) and the ball lands in a red or the green slots, the player will lose that spin.</p>
+                </li>
+                <li>
+                    <p>Since there are only two green slots on the wheel, the player will be rewarded more points than if they if they selected red or black, because the odds are much lower.</p>
+                </li>
+                <li>
+                    <p>Good luck!</p>
+                </li>
 
-
-
-    <script src="./rouletteassets/roulette.js"></script>
-</body>
+            </ul>
+        </div>
+       </section>
+       <section class="score-list">
+        <div>
+            <h2>Score</h2>
+            <ol>
+               
+            </ol>
+        </div>
+        <div class="reset-button">
+            <button type="reset">RESET</button>
+        </div>
+       </section>
+        
+       <script src="./rouletteassets/roulette.js"></script>
+    </body>
 </html>
