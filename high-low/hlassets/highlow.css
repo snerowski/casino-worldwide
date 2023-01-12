@@ -1,21 +1,94 @@
 
+
+/* HIGH LOW TITLE */
 .game-title {
-    font-size: 5rem;
+    font-size: 6rem;
     display: flex;
     justify-content: center;
     letter-spacing: 10px;
     margin-top: 2%;
 }
 
-main{
-    display: flex;
-    margin-left: 2%;
-    margin-top: 5%;
-
+/* CONTAINS THE WHOLE GAME */
+.game-container{
+    margin: 2% 2%;
+    min-height: 80vh;
+    border: 2px solid black;
 }
 
-main h2 {
+/* Dealer's Card h2 */
+.dealer-title,
+.player-title {
+    display: flex;
+    width: 94.5vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.dealer-title h2,
+.player-title h2{
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+/* DEALER SECTION -- directions and card img */
+.dealer-section{
+    display: flex;
+    margin: 3% 0;
+}
+
+.direction {
+    
+    margin-left: 2%;
+    width: 15vw;
+    padding-top: 50px;
+}
+
+.dealer-card {
+    width: 60vw;
+    min-height: 300px;
     display: flex;
     justify-content: center;
-    font-size: 3rem;
+    
 }
+
+.card-img{
+    
+    min-height: 300px;
+    max-width: 230px;
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/13/13/45/playing-card-161489_960_720.png);
+    background-repeat: no-repeat;
+    background-size: 220px;
+}
+
+.player-section {
+    display: flex;
+    margin: 3% 0;
+}
+
+.player-card {
+    width: 94.5vw;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+
+    
+}
+
+.player-card-img{
+    width: 230px;
+    min-height: 350px;
+    max-width: 230px;
+    background-image: url(https://cdn.pixabay.com/photo/2015/08/11/11/57/diamonds-884199_960_720.png);
+    background-repeat: no-repeat;
+    background-size: 220px;
+}
+
+
+
+   
+
+
+
