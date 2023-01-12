@@ -12,8 +12,32 @@
     <title>Bingo</title>
 </head>
 <body>
-    
+    <nav>
+        <div class="container-fluid d-flex justify-content-between">
+              <a class="navbar-brand" href="#">Home</a>
+            <div class="d-flex">
+              <a class="navbar-brand px-3" href="#">Bingo</a>
+              <a class="navbar-brand px-3" href="#">High low</a>
+              <a class="navbar-brand px-3" href="#">Roulette</a>
+              <a class="navbar-brand px-3" href="#">Slots</a>
+             </div>
+         </div>
+        </nav>
 
+        <center>
+            <h1>Bingo Card Game</h1>
+        </center>
+       <center>
+        <div>
+         How many Bingo cards <input type="number" id="txtInput" placeholder="Enter number of cards">
+         <button onclick="draw()"> Draw Card</button>
+         <button id="btnDrawBall" onclick="drawball()">Draw ball</button>
+         <button onclick="clearCards()">Clear</button>
+        </div>
+       </center>
+       <center>
+        <p id="pCount"> No. of cards: 0</p>
+       </center>
 
     <script src="./bingoassets/bingo.js"></script>
 </body>
