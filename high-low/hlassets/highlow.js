@@ -18,4 +18,20 @@ function shuffle() {
 
 }
 
+//  switch functions 52 times for unique card
+//  check if api can load images
+//  deck of cards api 
 
+
+var drawCard = document.querySelector(".draw")
+var higher = document.querySelector(".higher")
+var lower = document.querySelector(".lower")
+drawCard.addEventListener("click", function () {
+    console.log("DRAW BITCH")
+})
+higher.addEventListener("click", function () {
+    console.log("420")
+})
+lower.addEventListener("click", function () {
+    console.log("LOWWWWER")
+})
