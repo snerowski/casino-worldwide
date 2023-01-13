@@ -14,27 +14,28 @@
     <!-- navigation bar add links to other games after games completed -->
     <nav class="navbar" id="nav-bg">
         <div class="container-fluid d-flex justify-content-between">
-              <a class="navbar-brand px-4 fs-2" href="#">Home</a>
+              <a class="navbar-brand px-4 fs-2" href="../index.html">Home</a>
             <div class="d-flex">
-              <a class="navbar-brand px-3" href="#">Bingo</a>
-              <a class="navbar-brand px-3" href="#">High low</a>
-              <a class="navbar-brand px-3" href="#">Roulette</a>
-              <a class="navbar-brand px-3" href="#">Slots</a>
+              <a class="navbar-brand px-3" href="../Bingo/bingo.html">Bingo</a>
+              <a class="navbar-brand px-3" href="../high-low/highlow.html">High low</a>
+              <a class="navbar-brand px-3" href="../roulette/roulette.html">Roulette</a>
+              <a class="navbar-brand px-3" href="../slots/slots.html">Slots</a>
              </div>
          </div>
         </nav>
     <header>
-        <h1 class="d-flex justify-content-center fs-1 text-black title">  <!-- use title class to change font-size-->
-            Blackjack
+        <h1 class="d-flex justify-content-center  text-black title">  <!-- use title class to change font-size-->
+            BLACKJACK
         </h1>
     </header>
-    <br>
-    <br>
-    <main>
+    <main class="game-container">
         <h2>Dealer: <span id="dealer-sum"></span></h2>
-        <div id="dealer-cards"></div>
-        <img id="hide">
+        <div id="dealer-cards">
+            <img id="hide" src="../playing-cards-imgs/BACK.png">
+        </div>
         
+        
+        <br>
         <br>
 
         <h2>You: <span id="your-sum"></span></h2>
@@ -49,7 +50,10 @@
 
     </main>
 
-    
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
     <script src="./bjassets/blackjack.js"></script>
 </body>
 </html>

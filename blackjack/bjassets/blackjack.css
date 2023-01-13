@@ -3,7 +3,26 @@ body{
     text-align:center;
 }
 
-
+h1{
+    font-size: 100px;
+}
+.game-container{
+    margin: 2% 2%;
+    min-height: 80vh;
+    border: 4px solid black;
+}
 #nav-bg {
-    background-color:#4B382A ;
+    background-color:#351E10 ;
+}
+
+#dealer-cards img{
+    height: 200px;
+    width: 150px;
+    margin: 1px;
+}
+
+#user-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 1px;
 }
