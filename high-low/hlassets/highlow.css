@@ -13,7 +13,7 @@
 .game-container{
     margin: 2% 2%;
     min-height: 80vh;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 /* Dealer's Card h2 */
@@ -63,9 +63,11 @@
     background-size: 220px;
 }
 
+/* PLAYER SECTION */
 .player-section {
     display: flex;
     margin: 3% 0;
+    flex-direction: column;
 }
 
 .player-card {
@@ -84,6 +86,67 @@
     background-image: url(https://cdn.pixabay.com/photo/2015/08/11/11/57/diamonds-884199_960_720.png);
     background-repeat: no-repeat;
     background-size: 220px;
+}
+
+.draw-card{
+    width: 94.5vw;
+    height: 50px;
+    /* border: 2px solid brown; */
+    display: flex;
+    justify-content: center;
+}
+
+.draw-card button {
+    width: 180px;
+    height: 50px;
+}
+
+/* BUTTON/SCORE LAYOUT */
+
+.button-layout{
+    width: 94.5vw;
+    min-height: 100px;
+    /* border: 2px solid green; */
+    display: flex;
+}
+
+.score {
+    height: 100px;
+    width: 27.5vw;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.score p {
+    font-size: 3rem;
+}
+
+.higher-lower-card{
+    width: 40vw;
+    height: 100px;
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.higher-lower-card button{
+    width: 200px;
+    height: 50px;
+}
+
+.win-lose {
+    width: 27.5vw;
+    height: 100px;
+    /* border: 2px solid purple; */
+    display: flex;
+    justify-content: center;
+}
+
+.win-lose p {
+    font-size: 3rem;
 }
 
 
