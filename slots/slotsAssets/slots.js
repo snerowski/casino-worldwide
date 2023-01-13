@@ -1,6 +1,7 @@
 var spinAlouance;
 var numbersSpun;
 var timesWon;
+
 var result;
 var slotHandleEl = document.getElementById("slotHandle");
 var slotOneEl = document.getElementById("slotOne");
@@ -11,6 +12,12 @@ var slotArray = [
     "banana", "cherry", "apple", "orange", "watermelon"
 ]
 
+window.onload = function(){
+    result = spin();
+    selectImg(slotArray[result.firstSlot], 1);
+    selectImg(slotArray[result.secondSlot], 2);
+    selectImg(slotArray[result.thirdSlot], 3);
+}
 
 function spin(){
     
