@@ -1,0 +1,28 @@
+body { 
+    background-color: white;
+    color: rgb(1, 0, 0);
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    h1, th {
+      
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    h1 {
+      font-size: 32px;
+    }
+    table {
+      border-collapse: collapse;
+      
+    }
+    th, td{
+      padding: 10px;
+      border: 4px rgb(1, 0, 0) solid;
+      text-align: center;
+      width: 20%;
+    }
+    .free {
+        background-color: red;
+    }
+    
