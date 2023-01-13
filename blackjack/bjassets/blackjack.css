@@ -3,7 +3,14 @@ body{
     text-align:center;
 }
 
-
+h1{
+    font-size: 100px;
+}
+.game-container{
+    margin: 2% 2%;
+    min-height: 80vh;
+    border: 4px solid black;
+}
 #nav-bg {
     background-color:#351E10 ;
 }
