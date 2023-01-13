@@ -5,5 +5,17 @@ body{
 
 
 #nav-bg {
-    background-color:#4B382A ;
+    background-color:#351E10 ;
+}
+
+#dealer-cards img{
+    height: 200px;
+    width: 150px;
+    margin: 1px;
+}
+
+#user-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 1px;
 }
