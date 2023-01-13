@@ -1,3 +1,8 @@
+#body{
+    background: url(./images/kvnga-vBWsG91aR_U-unsplash.jpg);
+    
+}
+
 #slots{
     border: solid;
     border-radius: 1rem;
@@ -7,3 +12,4 @@
     border: solid;
     border-radius: 1rem;
 }
+
