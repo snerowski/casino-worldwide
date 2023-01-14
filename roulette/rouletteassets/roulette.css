@@ -1,0 +1,80 @@
+body{
+    background-color: #325656;
+}
+
+
+#nav-bg{
+    background-color: #4B382A;
+    
+}
+
+.game-container{
+    display: flex;
+    justify-content: center;
+    margin: 2% 2%;
+    min-height: 80vh;
+    border: 2px solid #4B382A;
+    width: fit-content;
+    height: fit-content;
+    box-sizing: content-box;
+    padding-left: 1200px;
+    padding-right: 400px;
+}
+
+#container{
+    display: inline-block;
+    justify-content: center;
+    padding-left: 350px;
+    margin-top: 20px;
+}
+
+#spin-button{
+    border: 3px solid #4B382A;
+    background-color: #4B382A;
+    color: white;
+}
+
+#color-selector{
+    border: 2px solid #4B382A;
+    background-color: #4B382A;
+    color: white;
+    
+}
+
+
+.results-box{
+    display: flex;
+    position: absolute;
+    margin-top: 750px;
+    margin-right: 850px
+}
+
+.rules-box{
+    display: block;
+    margin-left: 550px;
+    margin-top: 80px;
+    margin-right: 20px;
+    
+}
+
+p, h2, li{
+    color: white;
+}
+
+.score-list{
+    display: flex;
+    position: absolute;
+    margin-top: 80px;
+    margin-right: 3500px;
+    margin-left: 20px;
+}
+
+.reset-button{
+    display: flex;
+    position: absolute;
+    margin-top: 750px;
+    margin-right: 3500px;
+}
+
+
+
