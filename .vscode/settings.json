@@ -1,3 +1,8 @@
 {
-    "liveServer.settings.port": 5502
+    "liveServer.settings.port": 5502,
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.colorCustomizations": {
+        // "editorBracketMatch.border": "#00ff51ce",
+    },
+    "editor.guides.bracketPairs": "active"
 }

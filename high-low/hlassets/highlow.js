@@ -1,3 +1,43 @@
+var deckValues = {
+    "ACE": 14,
+    "KING": 13,
+    "QUEEN": 12,
+    "JACK": 11,
+    "10": 10,
+    "9": 9,
+    "8": 8,
+    "7": 7,
+    "6": 6,
+    "5": 5,
+    "4": 4,
+    "3": 3,
+    "2": 2
+}
+
+var dealer;
+var player;
+
+function compareHigh() {
+    if (player.value > dealer.value) {
+        console.log("YOU WIN")
+    } else if (player.value < dealer.value) {
+        console.log("YOU LOSE")
+    } else {
+        console.log("TIE GAME BITCH")
+    }
+}
+
+function compareLow() {
+    if (player.value > dealer.value) {
+        console.log("YOU LOSE")
+    } else if (player.value < dealer.value) {
+        console.log("YOU WIN")
+    } else {
+        console.log("TIE GAME BITCH")
+    }
+}
+
+
 
 var drawCard = document.querySelector(".draw")
 var higher = document.querySelector(".higher")
@@ -22,12 +62,12 @@ drawCard.addEventListener("click", function () {
             // storing json in data param
             .then(function (data) {
                 // console.log(data)
-                // storing card from json in new var
-                var card = data.cards[0];
+                // storing card from json in global var
+                dealer = data.cards[0];
                 // creating new img to add to div
                 var cardImg = document.createElement("img");
                 // setting new img to img from card var
-                cardImg.src = card.image;
+                cardImg.src = dealer.image;
                 // adding new img to div
                 document.querySelector(".card-img").appendChild(cardImg);
             });
@@ -46,12 +86,17 @@ higher.addEventListener("click", function () {
                 return response.json();
             })
             .then(function (data) {
-                var card = data.cards[0];
+                player = data.cards[0];
                 var cardImg = document.createElement("img");
-                cardImg.src = card.image;
+                cardImg.src = player.image;
                 document.querySelector(".player-card-img").appendChild(cardImg);
+                compareHigh()
+                // console.log(data)
             });
     }, 100)
+
+
+
 });
 
 
@@ -70,6 +115,11 @@ lower.addEventListener("click", function () {
                 var cardImg = document.createElement("img");
                 cardImg.src = card.image;
                 document.querySelector(".player-card-img").appendChild(cardImg);
+                compareLow()
             });
+
     }, 100)
 });
+
+
+
