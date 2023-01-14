@@ -1,19 +1,45 @@
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    background-image: url(https://images.unsplash.com/photo-1514977126150-31c9c7b3d9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-size: cover;
+    background-position: 60% 80%; 
+}
+/* NAVBAR */
+.navbar {
+    background-image: url(https://images.unsplash.com/photo-1492446190781-58ac4285911d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1105&q=80);
+    background-position: 90% 50%;
+}
+
+.navbar-brand{
+    color: rgb(255, 239, 239);
+}
+
+.px-3 {
+    color: rgb(255, 239, 239);
+border-right: 1px solid white;
+}
+
+.navbar-brand:hover {
+    color: rgb(255, 144, 218);
+}
 
 
 /* HIGH LOW TITLE */
 .game-title {
-    font-size: 6rem;
+    font-size: 4rem;
     display: flex;
     justify-content: center;
     letter-spacing: 10px;
     margin-top: 2%;
+    color: rgb(255, 239, 239);
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
 }
 
 /* CONTAINS THE WHOLE GAME */
 .game-container{
     margin: 2% 2%;
-    min-height: 80vh;
-    /* border: 2px solid black; */
+    color: rgb(255, 239, 239);
 }
 
 /* Dealer's Card h2 */
@@ -24,80 +50,85 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+.dealer-title{
+    margin-bottom: 2%;
 }
 
 .dealer-title h2,
 .player-title h2{
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
 }
 
 
-/* DEALER SECTION -- directions and card img */
+/* DEALER SECTION -- card img */
 .dealer-section{
     display: flex;
-    margin: 3% 0;
-}
-
-.direction {
-    
-    margin-left: 2%;
-    width: 15vw;
-    padding-top: 50px;
+    height: 170px;
 }
 
 .dealer-card {
-    width: 60vw;
-    min-height: 300px;
+    width: 94.5vw;
+    height: 180px;
     display: flex;
     justify-content: center;
     
 }
 
 .card-img{
+    display: flex;
+    justify-content: center;
+        
+}
+
+.card-img img {
+    height: 160px;
+    max-width: 150px;
+    box-shadow: 3px 4px 4px rgb(37, 37, 37);
     
-    min-height: 300px;
-    max-width: 230px;
-    /* background-image: url(https://cdn.pixabay.com/photo/2013/07/13/13/45/playing-card-161489_960_720.png); */
-    background-repeat: no-repeat;
-    background-size: 220px;
 }
 
 /* PLAYER SECTION */
+.player-title{
+    margin-top: 1%;
+}
 .player-section {
     display: flex;
-    margin: 3% 0;
+    margin: 1% 0;
     flex-direction: column;
 }
 
 .player-card {
     width: 94.5vw;
-    min-height: 300px;
+    height: 160px;
     display: flex;
     justify-content: center;
-
-    
+margin-bottom: 2%;
 }
 
 .player-card-img{
-    width: 230px;
-    min-height: 350px;
-    max-width: 230px;
-    /* background-image: url(https://cdn.pixabay.com/photo/2015/08/11/11/57/diamonds-884199_960_720.png); */
-    background-repeat: no-repeat;
-    background-size: 220px;
+    max-width: 200px;
+    height: 160px;
+}
+
+.player-card-img img {
+    height: 160px;
+    box-shadow: 3px 4px 4px rgb(37, 37, 37);
 }
 
 .draw-card{
     width: 94.5vw;
-    height: 50px;
-    /* border: 2px solid brown; */
+    height: 40px;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
 }
 
 .draw-card button {
-    width: 180px;
+    width: 130px;
     height: 50px;
 }
 
@@ -113,10 +144,9 @@
 .score {
     height: 100px;
     width: 27.5vw;
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
 }
 
 .score p {
@@ -126,27 +156,35 @@
 .higher-lower-card{
     width: 40vw;
     height: 100px;
-    /* border: 2px solid yellow; */
     display: flex;
     justify-content: space-evenly;
-    /* align-items: center; */
 }
 
 .higher-lower-card button{
-    width: 200px;
+    width: 150px;
     height: 50px;
 }
 
 .win-lose {
     width: 27.5vw;
     height: 100px;
-    /* border: 2px solid purple; */
     display: flex;
     justify-content: center;
 }
 
 .win-lose p {
     font-size: 3rem;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+/* DIRECTIONS */
+.directions {
+    width: 94.5vw;
+    padding-left: 2.5%;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-top: 4%;
 }
 
 
