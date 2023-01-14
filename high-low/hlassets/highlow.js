@@ -1,37 +1,75 @@
-var suits = ["H", "S", "C", "D"]
-var rank = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K",]
-var deck = []
-
-// nested for loop to combine all the suits to their values
-for (var i = 0; i < 4; i++) {
-    // console.log(suits[i])
-    for (var j = 0; j < 13; j++) {
-        // console.log(value[j])
-        // console.log(value[j] + suits[i])
-        // deck.push(rank[j] + suits[i])
-        deck.push({ suit: suits[i], rank: rank[j] });
-    }
-}
-console.log(deck)
-
-function shuffle() {
-
-}
-
-//  switch functions 52 times for unique card
-//  check if api can load images
-//  deck of cards api 
-
 
 var drawCard = document.querySelector(".draw")
 var higher = document.querySelector(".higher")
 var lower = document.querySelector(".lower")
+
+// event listener to draw new card for the dealer
 drawCard.addEventListener("click", function () {
-    console.log("DRAW BITCH")
-})
+    // variable to store the new img in the empty div
+    var currentImg = document.querySelector(".card-img img");
+    // removes current image
+    if (currentImg) {
+        currentImg.remove();
+    }
+    // delaying the card from appearing
+    setTimeout(function () {
+        // api link
+        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+            // taking api data converting to json
+            .then(function (response) {
+                return response.json();
+            })
+            // storing json in data param
+            .then(function (data) {
+                // console.log(data)
+                // storing card from json in new var
+                var card = data.cards[0];
+                // creating new img to add to div
+                var cardImg = document.createElement("img");
+                // setting new img to img from card var
+                cardImg.src = card.image;
+                // adding new img to div
+                document.querySelector(".card-img").appendChild(cardImg);
+            });
+    }, 100)
+});
+
+
 higher.addEventListener("click", function () {
-    console.log("420")
-})
+    var currentImg = document.querySelector(".player-card-img img");
+    if (currentImg) {
+        currentImg.remove();
+    }
+    setTimeout(function () {
+        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var card = data.cards[0];
+                var cardImg = document.createElement("img");
+                cardImg.src = card.image;
+                document.querySelector(".player-card-img").appendChild(cardImg);
+            });
+    }, 100)
+});
+
+
 lower.addEventListener("click", function () {
-    console.log("LOWWWWER")
-})
+    var currentImg = document.querySelector(".player-card-img img");
+    if (currentImg) {
+        currentImg.remove();
+    }
+    setTimeout(function () {
+        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                var card = data.cards[0];
+                var cardImg = document.createElement("img");
+                cardImg.src = card.image;
+                document.querySelector(".player-card-img").appendChild(cardImg);
+            });
+    }, 100)
+});

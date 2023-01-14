@@ -58,7 +58,7 @@
     
     min-height: 300px;
     max-width: 230px;
-    background-image: url(https://cdn.pixabay.com/photo/2013/07/13/13/45/playing-card-161489_960_720.png);
+    /* background-image: url(https://cdn.pixabay.com/photo/2013/07/13/13/45/playing-card-161489_960_720.png); */
     background-repeat: no-repeat;
     background-size: 220px;
 }
@@ -83,7 +83,7 @@
     width: 230px;
     min-height: 350px;
     max-width: 230px;
-    background-image: url(https://cdn.pixabay.com/photo/2015/08/11/11/57/diamonds-884199_960_720.png);
+    /* background-image: url(https://cdn.pixabay.com/photo/2015/08/11/11/57/diamonds-884199_960_720.png); */
     background-repeat: no-repeat;
     background-size: 220px;
 }
