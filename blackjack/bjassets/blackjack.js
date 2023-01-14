@@ -72,9 +72,20 @@ hitBtn.addEventListener("click",function(){
         document.getElementById("user-cards").appendChild(img);
         totalValue += randomCard.value;
         document.getElementById("your-sum").innerHTML = totalValue;
+        checkBust();
     }
     // console.log("i work");
 });
+
+function checkBust (){
+    if (totalValue > 21){
+        var bustMessage = document.createElement("p");
+        bustMessage.innerHTML = "You've gone bust!";
+        bustMessage.classList.add("bust-message");
+        document.getElementById("user-cards").appendChild(bustMessage);
+        document.getElementById("hit").setAttribute("disabled", true);
+    }
+} 
 
 standBtn.addEventListener("click",function(){
     console.log("i work too");

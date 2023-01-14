@@ -30,3 +30,8 @@ h1{
     width: 125px;
     margin: 1px;
 }
+
+.bust-message {
+    color: black;
+    font-size: 55px;
+}
