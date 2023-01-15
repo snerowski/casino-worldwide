@@ -1,3 +1,7 @@
+*{
+    font-family:Righteous,'Cinzel','Noto Serif Toto','serif' ;
+}
+
 body{
     background-color: #325656;
     text-align:center;
@@ -9,20 +13,29 @@ h1{
 .game-container{
     margin: 2% 2%;
     min-height: 80vh;
-    border: 4px solid black;
+    border: 5px solid black;
 }
 #nav-bg {
     background-color:#351E10 ;
 }
 
 #dealer-cards img{
-    height: 200px;
+    /* height: 200px; */
     width: 150px;
     margin: 1px;
 }
 
 #user-cards img{
-    height: 175px;
-    width: 125px;
+    height: 200px;
+    width: 150px;
     margin: 1px;
 }
+
+.bust-message {
+    color: black;
+    font-size: 55px;
+}
+.hidden{
+    display: none;
+}
+ 
