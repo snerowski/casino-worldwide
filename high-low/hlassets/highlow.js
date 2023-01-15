@@ -14,31 +14,46 @@ var deckValues = {
     "2": 2
 }
 
-
+var dealer;
+var player;
+var winLose = document.querySelector("#wl")
+var score = document.querySelector(".score-number")
+var startingScore = 100
+var winLose = document.querySelector(".wl")
+score.textContent = startingScore;
 
 function compareHigh() {
+
     if (player.value > dealer.value) {
-        console.log("YOU WIN")
+        winLose.textContent = "WINNER!!!"
+        startingScore = startingScore + 10;
+        score.textContent = startingScore;
     } else if (player.value < dealer.value) {
-        console.log("YOU LOSE")
+        winLose.textContent = "YOU LOSE :("
+        startingScore = startingScore - 10;
+        score.textContent = startingScore;
     } else {
-        console.log("TIE GAME BITCH")
+        winLose.textContent = "TIE GAME BUDDY"
     }
 }
 
 function compareLow() {
+
     if (player.value > dealer.value) {
-        console.log("YOU LOSE")
+        winLose.textContent = "YOU LOSE :("
+        startingScore = startingScore - 10;
+        score.textContent = startingScore;
     } else if (player.value < dealer.value) {
-        console.log("YOU WIN")
+        winLose.textContent = "WINNER!!!"
+        startingScore = startingScore + 10;
+        score.textContent = startingScore;
     } else {
-        console.log("TIE GAME BITCH")
+        winLose.textContent = "TIE GAME BUD"
     }
 }
 
 
-var dealer;
-var player;
+
 var drawCard = document.querySelector(".draw")
 var higher = document.querySelector(".higher")
 var lower = document.querySelector(".lower")
