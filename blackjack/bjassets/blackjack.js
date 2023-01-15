@@ -157,6 +157,11 @@ standBtn.addEventListener("click",function(){
         tieMessage.innerHTML = "ITS A TIE!";
         tieMessage.classList.add("win-message");
         document.getElementById("user-cards").appendChild(tieMessage);
+    } if (dealerValue > totalValue) {
+        var dealerMessage = document.createElement("h2");
+        dealerMessage.innerHTML = "DEALER WON TRY AGAIN!";
+        dealerMessage.classList.add("win-message");
+        document.getElementById("user-cards").appendChild(dealerMessage);
     }
 
 })
