@@ -61,8 +61,8 @@ var totalValue = 0;
 var dealerValue = 0;
 //make the dealer and the user start with two cards? at least make the dealer start with 2 one hidden
 // base the dealer choices of hitting on user totalValue that way itll only try to get higher than that 
-var dealerValue
-var hide
+
+
 
 // maybe add button that refreshes the page?
 function hit() {
@@ -82,17 +82,13 @@ function hit() {
 }
 document.getElementById("hit").addEventListener("click", hit);
 
-window.onload = function() {
-    hit();
-    hit();
-}
-
 function dealCardsToDealer(){
-    for(var i = 0; i < 2; i++){
+    for(var i = 0; i < 1; i++){
         var randomCard = cards[Math.floor(Math.random()*cards.length)];
         while(usedCards.indexOf(randomCard)!== -1){
             cards[Math.floor(Math.random()*cards.length)];
         }
+
         usedCards.push(randomCard);
         var img = document.createElement("img");
         img.src = randomCard.src;
@@ -100,7 +96,6 @@ function dealCardsToDealer(){
         dealerValue += randomCard.value;    
         document.getElementById("dealer-sum").innerHTML = dealerValue;
     }
-    document.getElementById("hide").style.display = "none"
 }
 window.onload = function(){
     dealCardsToDealer();
@@ -111,12 +106,57 @@ window.onload = function(){
 
 function checkBust (){
     if (totalValue > 21){
-        var bustMessage = document.createElement("p");
+        var bustMessage = document.createElement("h2");
         bustMessage.innerHTML = "Bust!";
         bustMessage.classList.add("bust-message");
         document.getElementById("user-cards").appendChild(bustMessage);
         document.getElementById("hit").setAttribute("disabled", true);
     }
 } 
+function dealerHit() {
+    while (dealerValue < totalValue) {
+        var randomCard = cards[Math.floor(Math.random() * cards.length)];
+        while (usedCards.indexOf(randomCard) !== -1) {
+            cards[Math.floor(Math.random() * cards.length)];
+        }
+        usedCards.push(randomCard);
+        var img = document.createElement("img");
+        img.src = randomCard.src;
+        document.getElementById("dealer-cards").appendChild(img);
+        dealerValue += randomCard.value;
+        document.getElementById("dealer-sum").innerHTML = dealerValue;
+    }
+}
 
-standBtn.addEventListener("click)
+var hiddenDealerCard = document.getElementById("dealer-cards").firstElementChild;
+hiddenDealerCard.classList.add("hidden");
+
+standBtn.addEventListener("click",function(){
+    // hiddenDealerCard.classList.remove("hidden")
+    if(totalValue === 21){
+        var winMessage = document.createElement("h2");
+        winMessage.innerHTML = "YOU WON!";
+        winMessage.classList.add("win-message");
+        document.getElementById("user-cards").appendChild(winMessage);
+    }else {
+        dealerHit();
+
+    }
+    if(dealerValue > 21 ) {
+        var dealerMessageLost = document.createElement("h2");
+        dealerMessageLost.innerHTML = "YOU WON Dealer busted!";
+        dealerMessageLost.classList.add ("win-message");
+        document.getElementById("user-cards").appendChild(dealerMessageLost);
+    } if (dealerValue === 21) {
+        var dealearWonMessage = document.createElement("h2");
+        dealearWonMessage.innerHTML = "DEALER WON SORRY TRY AGAIN";
+        dealearWonMessage.classList.add("win-message");
+        document.getElementById("user-cards").appendChild(dealearWonMessage);
+    } if (dealerValue === totalValue) {
+        var tieMessage = document.createElement("h2");
+        tieMessage.innerHTML = "ITS A TIE!";
+        tieMessage.classList.add("win-message");
+        document.getElementById("user-cards").appendChild(tieMessage);
+    }
+
+})

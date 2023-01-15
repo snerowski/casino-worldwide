@@ -20,14 +20,14 @@ h1{
 }
 
 #dealer-cards img{
-    height: 200px;
+    /* height: 200px; */
     width: 150px;
     margin: 1px;
 }
 
 #user-cards img{
-    height: 175px;
-    width: 125px;
+    height: 200px;
+    width: 150px;
     margin: 1px;
 }
 
@@ -35,3 +35,7 @@ h1{
     color: black;
     font-size: 55px;
 }
+.hidden{
+    display: none;
+}
+ 
