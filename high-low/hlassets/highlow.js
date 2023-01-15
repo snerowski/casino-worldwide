@@ -16,24 +16,38 @@ var deckValues = {
 
 var dealer;
 var player;
-
+var winLose = document.querySelector("#wl")
+var score = document.querySelector(".score-number")
+var startingScore = 100
+score.textContent = startingScore
 function compareHigh() {
+
+
     if (player.value > dealer.value) {
-        console.log("YOU WIN")
+        winLose.textContent = "WINNER!!!"
+        startingScore = startingScore + 10;
+        score.textContent = startingScore;
     } else if (player.value < dealer.value) {
-        console.log("YOU LOSE")
+        winLose.textContent = "YOU LOSE :("
+        startingScore = startingScore - 10;
+        score.textContent = startingScore;
     } else {
-        console.log("TIE GAME BITCH")
+        winLose.textContent = "TIE GAME BUDDY"
     }
 }
 
 function compareLow() {
+
     if (player.value > dealer.value) {
-        console.log("YOU LOSE")
+        winLose.textContent = "YOU LOSE :("
+        startingScore = startingScore - 10;
+        score.textContent = startingScore;
     } else if (player.value < dealer.value) {
-        console.log("YOU WIN")
+        winLose.textContent = "WINNER!!!"
+        startingScore = startingScore + 10;
+        score.textContent = startingScore;
     } else {
-        console.log("TIE GAME BITCH")
+        winLose.textContent = "TIE GAME BUD"
     }
 }
 
@@ -111,9 +125,9 @@ lower.addEventListener("click", function () {
                 return response.json();
             })
             .then(function (data) {
-                var card = data.cards[0];
+                player = data.cards[0];
                 var cardImg = document.createElement("img");
-                cardImg.src = card.image;
+                cardImg.src = player.image;
                 document.querySelector(".player-card-img").appendChild(cardImg);
                 compareLow()
             });
