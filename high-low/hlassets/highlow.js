@@ -19,9 +19,9 @@ var player;
 var winLose = document.querySelector("#wl")
 var score = document.querySelector(".score-number")
 var startingScore = 100
-score.textContent = startingScore
-function compareHigh() {
+score.textContent = startingScore;
 
+function compareHigh() {
 
     if (player.value > dealer.value) {
         winLose.textContent = "WINNER!!!"
