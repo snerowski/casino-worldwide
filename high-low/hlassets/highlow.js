@@ -14,8 +14,7 @@ var deckValues = {
     "2": 2
 }
 
-var dealer;
-var player;
+
 
 function compareHigh() {
     if (player.value > dealer.value) {
@@ -38,7 +37,8 @@ function compareLow() {
 }
 
 
-
+var dealer;
+var player;
 var drawCard = document.querySelector(".draw")
 var higher = document.querySelector(".higher")
 var lower = document.querySelector(".lower")
@@ -111,9 +111,9 @@ lower.addEventListener("click", function () {
                 return response.json();
             })
             .then(function (data) {
-                var card = data.cards[0];
+                player = data.cards[0];
                 var cardImg = document.createElement("img");
-                cardImg.src = card.image;
+                cardImg.src = player.image;
                 document.querySelector(".player-card-img").appendChild(cardImg);
                 compareLow()
             });
