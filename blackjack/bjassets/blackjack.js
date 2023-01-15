@@ -55,12 +55,17 @@ var cards = [
   ];
 
 var usedCards = [];
-var hitBtn = document.querySelector('#hit');
+var hitbtn = document.querySelector('#hit');
 var standBtn = document.querySelector('#stand');
 var totalValue = 0;
-var availableCards = cards.slice();
+var dealerValue = 0;
+//make the dealer and the user start with two cards? at least make the dealer start with 2 one hidden
+// base the dealer choices of hitting on user totalValue that way itll only try to get higher than that 
+var dealerValue
+var hide
 
-hitBtn.addEventListener("click",function(){
+// maybe add button that refreshes the page?
+function hit() {
     if(totalValue <= 21) {
         var randomCard = cards[Math.floor(Math.random()*cards.length)];
         while(usedCards.indexOf(randomCard) !== -1){
@@ -74,19 +79,44 @@ hitBtn.addEventListener("click",function(){
         document.getElementById("your-sum").innerHTML = totalValue;
         checkBust();
     }
-    // console.log("i work");
-});
+}
+document.getElementById("hit").addEventListener("click", hit);
+
+window.onload = function() {
+    hit();
+    hit();
+}
+
+function dealCardsToDealer(){
+    for(var i = 0; i < 2; i++){
+        var randomCard = cards[Math.floor(Math.random()*cards.length)];
+        while(usedCards.indexOf(randomCard)!== -1){
+            cards[Math.floor(Math.random()*cards.length)];
+        }
+        usedCards.push(randomCard);
+        var img = document.createElement("img");
+        img.src = randomCard.src;
+        document.getElementById("dealer-cards").appendChild(img);
+        dealerValue += randomCard.value;    
+        document.getElementById("dealer-sum").innerHTML = dealerValue;
+    }
+    document.getElementById("hide").style.display = "none"
+}
+window.onload = function(){
+    dealCardsToDealer();
+    hit();
+    hit();
+}
+
 
 function checkBust (){
     if (totalValue > 21){
         var bustMessage = document.createElement("p");
-        bustMessage.innerHTML = "You've gone bust!";
+        bustMessage.innerHTML = "Bust!";
         bustMessage.classList.add("bust-message");
         document.getElementById("user-cards").appendChild(bustMessage);
         document.getElementById("hit").setAttribute("disabled", true);
     }
 } 
 
-standBtn.addEventListener("click",function(){
-    console.log("i work too");
-});
+standBtn.addEventListener("click)
