@@ -25,9 +25,10 @@ var drawCard = document.querySelector(".draw")
 var higher = document.querySelector(".higher")
 var lower = document.querySelector(".lower")
 score.textContent = startingScore;
+higher.disabled = true;
+lower.disabled = true;
 
-
-function newGame() {
+function clear() {
     emptyImg.innerHTML = ""
     winLose.textContent = ""
 }
@@ -61,16 +62,17 @@ function compareLow() {
     }
 }
 
+
 // event listener to draw new card for the dealer
 drawCard.addEventListener("click", function () {
-
+    drawCard.disabled = true;
     // variable to store the new img in the empty div
     var currentImg = document.querySelector(".card-img img");
     // removes current image
     if (currentImg) {
         currentImg.remove();
     }
-    newGame()
+    clear()
     // delaying the card from appearing
     setTimeout(function () {
         // api link
@@ -93,10 +95,14 @@ drawCard.addEventListener("click", function () {
             });
     }, 100)
 
+
+    higher.disabled = false;
+    lower.disabled = false;
 });
 
 
 higher.addEventListener("click", function () {
+    higher.disabled = true
     playerImg = document.querySelector(".player-card-img img");
     if (playerImg) {
         playerImg.remove();
@@ -114,14 +120,16 @@ higher.addEventListener("click", function () {
                 compareHigh()
                 // console.log(data)
             });
+        drawCard.disabled = false
+        lower.disabled = true
     }, 100)
-
 
 
 });
 
 
 lower.addEventListener("click", function () {
+    lower.disabled = true
     playerImg = document.querySelector(".player-card-img img");
     if (playerImg) {
         playerImg.remove();
@@ -138,7 +146,8 @@ lower.addEventListener("click", function () {
                 document.querySelector(".player-card-img").appendChild(cardImg);
                 compareLow()
             });
-
+        drawCard.disabled = false
+        higher.disabled = true
     }, 100)
 });
 
