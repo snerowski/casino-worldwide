@@ -1,8 +1,16 @@
 body { 
-  background-color: white;
-  color: black;
+  background-image:url(../bingoassets/images/bingo2.jpeg);
+ background-size: cover;
+ max-width: 100vw;
+ min-height: 100vh;
+ background-position: 60% 80%;
+  color: whitesmoke;
   font-size: 24px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  nav {
+    margin-bottom: 10%;
+    color: white;
   }
   table {
     border-collapse: collapse;
@@ -19,7 +27,7 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
   th, td{
     padding: 25px;
-    border: 5px rgb(0,0,1) solid;
+    border: 5px white solid;
     text-align: center;
     width: 20%;
   }
