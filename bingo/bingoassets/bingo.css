@@ -1,0 +1,28 @@
+body { 
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  table {
+    border-collapse: collapse;
+    
+  }
+  h1, th {
+    
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+  }
+  h1 {
+    font-size: 21px;
+  }
+
+  th, td{
+    padding: 25px;
+    border: 5px rgb(0,0,1) solid;
+    text-align: center;
+    width: 20%;
+  }
+  .free {
+    background-color: red;
+  }
