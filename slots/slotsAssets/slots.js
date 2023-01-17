@@ -7,6 +7,7 @@ var slotHandleEl = document.getElementById("slotHandle");
 var slotOneEl = document.getElementById("slotOne");
 var slotTwoEl = document.getElementById("slotTwo");
 var slotThreeEl = document.getElementById("slotThree");
+var navDropdownMenu = document.getElementById("dropdownMenuButton");
 
 var slotArray = [
     "banana", "cherry", "apple", "orange", "watermelon"
