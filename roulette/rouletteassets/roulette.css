@@ -1,5 +1,5 @@
 body{
-    background-color: #325656;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/138980/184983947.jpg);
 }
 
 
@@ -41,6 +41,27 @@ body{
     
 }
 
+#roulette-wheel{
+ max-height: inherit;
+ max-width: inherit;
+ top: 0;
+ padding: 0;   
+}
+
+.wrapper{
+    width: 800px;
+    height: 500px;
+    max-width: 34.37em;
+    background-color: #4B382A;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 3em;
+    border-radius: 1em;
+    box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+}
+
 
 .results-box{
     display: flex;
@@ -76,5 +97,22 @@ p, h2, li{
     margin-right: 3500px;
 }
 
+img{
+    position: absolute;
+    width: 200px;
+    margin-left: 200px;
+    margin-top: 100px;
+}
 
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        margin-right: 200px;
+    }
+}
 
