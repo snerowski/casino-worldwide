@@ -164,7 +164,7 @@ standBtn.addEventListener("click",function(){
         dealearWonMessage.classList.add("win-message");
         document.getElementById("user-cards").appendChild(dealearWonMessage);
     }
-
+    
 })
 
 
