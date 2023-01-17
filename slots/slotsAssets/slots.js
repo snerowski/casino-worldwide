@@ -14,10 +14,16 @@ var slotArray = [
 ]
 
 window.onload = function(){
+    
     result = spin();
     selectImg(slotArray[result.firstSlot], 1);
     selectImg(slotArray[result.secondSlot], 2);
     selectImg(slotArray[result.thirdSlot], 3);
+    if(localStorage.getItem("slotsResults")){
+        var storage = JSON.parse(localStorage.getItem("slotsResults"));
+        console.log(storage);
+    }
+   
 }
 
 function spin(){
@@ -30,9 +36,17 @@ function spin(){
     return resultOfspin;
 }
 
+
+
 slotHandleEl.addEventListener("click", function(){
+    if (numbersSpun == null) {
+        numbersSpun = 1;
+    }else{
+        numbersSpun++;
+    }
+    console.log(numbersSpun);
     result = spin();
-    console.log(result);
+    
     selectImg(slotArray[result.firstSlot], 1);
     selectImg(slotArray[result.secondSlot], 2);
     selectImg(slotArray[result.thirdSlot], 3);
@@ -40,7 +54,18 @@ slotHandleEl.addEventListener("click", function(){
     console.log();
 
     if(result.firstSlot === result.secondSlot && result.firstSlot === result.thirdSlot){
+        if(timesWon == null){
+            timesWon = 1;
+        }else{
+            timesWon++;
+        }
         window.alert("You win");
+        console.log(timesWon);
+        var winRate = {
+            spins: numbersSpun,
+            wins: timesWon
+        }
+        localStorage.setItem("slotsResults",JSON.stringify(winRate));
     }
 });
 
