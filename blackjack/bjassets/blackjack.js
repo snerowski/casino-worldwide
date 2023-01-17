@@ -147,7 +147,8 @@ standBtn.addEventListener("click",function(){
         dealerMessageLost.innerHTML = "YOU WON Dealer busted!";
         dealerMessageLost.classList.add ("win-message");
         document.getElementById("user-cards").appendChild(dealerMessageLost);
-    } if (dealerValue === 21) {
+    } 
+    if (dealerValue === 21) {
         var dealearWonMessage = document.createElement("h2");
         dealearWonMessage.innerHTML = "DEALER WON SORRY TRY AGAIN";
         dealearWonMessage.classList.add("win-message");
@@ -157,7 +158,12 @@ standBtn.addEventListener("click",function(){
         tieMessage.innerHTML = "ITS A TIE!";
         tieMessage.classList.add("win-message");
         document.getElementById("user-cards").appendChild(tieMessage);
-    } 
+    } if (dealerValue > totalValue && dealerValue < 21) {
+        var dealearWonMessage = document.createElement("h2");
+        dealearWonMessage.innerHTML = "DEALER WON SORRY TRY AGAIN";
+        dealearWonMessage.classList.add("win-message");
+        document.getElementById("user-cards").appendChild(dealearWonMessage);
+    }
 
 })
 
