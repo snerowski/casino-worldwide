@@ -16,12 +16,21 @@ var deckValues = {
 
 var dealer;
 var player;
-var winLose = document.querySelector("#wl")
 var score = document.querySelector(".score-number")
 var startingScore = 100
 var winLose = document.querySelector(".wl")
+var playerImg = document.querySelector(".player-card-img img");
+var emptyImg = document.querySelector(".player-card-img")
+var drawCard = document.querySelector(".draw")
+var higher = document.querySelector(".higher")
+var lower = document.querySelector(".lower")
 score.textContent = startingScore;
 
+
+function newGame() {
+    emptyImg.innerHTML = ""
+    winLose.textContent = ""
+}
 function compareHigh() {
 
     if (player.value > dealer.value) {
@@ -52,20 +61,16 @@ function compareLow() {
     }
 }
 
-
-
-var drawCard = document.querySelector(".draw")
-var higher = document.querySelector(".higher")
-var lower = document.querySelector(".lower")
-
 // event listener to draw new card for the dealer
 drawCard.addEventListener("click", function () {
+
     // variable to store the new img in the empty div
     var currentImg = document.querySelector(".card-img img");
     // removes current image
     if (currentImg) {
         currentImg.remove();
     }
+    newGame()
     // delaying the card from appearing
     setTimeout(function () {
         // api link
@@ -76,7 +81,7 @@ drawCard.addEventListener("click", function () {
             })
             // storing json in data param
             .then(function (data) {
-                // console.log(data)
+                console.log(data)
                 // storing card from json in global var
                 dealer = data.cards[0];
                 // creating new img to add to div
@@ -87,13 +92,14 @@ drawCard.addEventListener("click", function () {
                 document.querySelector(".card-img").appendChild(cardImg);
             });
     }, 100)
+
 });
 
 
 higher.addEventListener("click", function () {
-    var currentImg = document.querySelector(".player-card-img img");
-    if (currentImg) {
-        currentImg.remove();
+    playerImg = document.querySelector(".player-card-img img");
+    if (playerImg) {
+        playerImg.remove();
     }
     setTimeout(function () {
         fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
@@ -116,9 +122,9 @@ higher.addEventListener("click", function () {
 
 
 lower.addEventListener("click", function () {
-    var currentImg = document.querySelector(".player-card-img img");
-    if (currentImg) {
-        currentImg.remove();
+    playerImg = document.querySelector(".player-card-img img");
+    if (playerImg) {
+        playerImg.remove();
     }
     setTimeout(function () {
         fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
