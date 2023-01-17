@@ -13,6 +13,14 @@ score.textContent = startingScore;
 higher.disabled = true;
 lower.disabled = true;
 
+
+function updateScore(newScore) {
+    startingScore = newScore;
+    console.log(startingScore)
+    score.textContent = newScore;
+    localStorage.setItem("playerScore", newScore);
+}
+
 // function to clear
 function clear() {
     emptyImg.innerHTML = ""
@@ -108,12 +116,10 @@ function compareHigh() {
 
     if (playerValue > dealerValue) {
         winLose.textContent = "WINNER!!!"
-        startingScore = startingScore + 10;
-        score.textContent = startingScore;
+        updateScore(startingScore + 10)
     } else if (playerValue < dealerValue) {
         winLose.textContent = "YOU LOSE :("
-        startingScore = startingScore - 10;
-        score.textContent = startingScore;
+        updateScore(startingScore - 10)
     } else {
         winLose.textContent = "TIE GAME"
     }
@@ -207,12 +213,10 @@ function compareLow() {
     }
     if (playerValue > dealerValue) {
         winLose.textContent = "YOU LOSE :("
-        startingScore = startingScore - 10;
-        score.textContent = startingScore;
+        updateScore(startingScore - 10)
     } else if (playerValue < dealerValue) {
         winLose.textContent = "WINNER!!!"
-        startingScore = startingScore + 10;
-        score.textContent = startingScore;
+        updateScore(startingScore + 10)
     } else {
         winLose.textContent = "TIE GAME"
     }
@@ -300,6 +304,7 @@ lower.addEventListener("click", function () {
             higher.disabled = true
         }, 100)
 });
+
 
 
 
