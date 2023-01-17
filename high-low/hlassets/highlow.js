@@ -1,18 +1,3 @@
-var deckValues = {
-    "ACE": 14,
-    "KING": 13,
-    "QUEEN": 12,
-    "JACK": 11,
-    "10": 10,
-    "9": 9,
-    "8": 8,
-    "7": 7,
-    "6": 6,
-    "5": 5,
-    "4": 4,
-    "3": 3,
-    "2": 2
-}
 
 var dealer;
 var player;
@@ -28,17 +13,104 @@ score.textContent = startingScore;
 higher.disabled = true;
 lower.disabled = true;
 
+// function to clear
 function clear() {
     emptyImg.innerHTML = ""
     winLose.textContent = ""
 }
+
+// function to compare higher value
 function compareHigh() {
+    var dealerValue = 0
+    var playerValue = 0
+    switch (dealer.value) {
+        case "2":
+            dealerValue = 2;
+            break;
+        case "3":
+            dealerValue = 3;
+            break;
+        case "4":
+            dealerValue = 4;
+            break;
+        case "5":
+            dealerValue = 5;
+            break;
+        case "6":
+            dealerValue = 6;
+            break;
+        case "7":
+            dealerValue = 7;
+            break;
+        case "8":
+            dealerValue = 8;
+            break;
+        case "9":
+            dealerValue = 9;
+            break;
+        case "10":
+            dealerValue = 10;
+            break;
+        case "JACK":
+            dealerValue = 11;
+            break;
+        case "QUEEN":
+            dealerValue = 12;
+            break;
+        case "KING":
+            dealerValue = 13
+            break;
+        case "ACE":
+            dealerValue = 14
+            break;
+    }
+    switch (player.value) {
+        case "2":
+            playerValue = 2;
+            break;
+        case "3":
+            playerValue = 3;
+            break;
+        case "4":
+            playerValue = 4;
+            break;
+        case "5":
+            playerValue = 5;
+            break;
+        case "6":
+            playerValue = 6;
+            break;
+        case "7":
+            playerValue = 7;
+            break;
+        case "8":
+            playerValue = 8;
+            break;
+        case "9":
+            playerValue = 9;
+            break;
+        case "10":
+            playerValue = 10;
+            break;
+        case "JACK":
+            playerValue = 11;
+            break;
+        case "QUEEN":
+            playerValue = 12;
+            break;
+        case "KING":
+            playerValue = 13
+            break;
+        case "ACE":
+            playerValue = 14
+            break;
+    }
 
-    if (player.value > dealer.value) {
+    if (playerValue > dealerValue) {
         winLose.textContent = "WINNER!!!"
         startingScore = startingScore + 10;
         score.textContent = startingScore;
-    } else if (player.value < dealer.value) {
+    } else if (playerValue < dealerValue) {
         winLose.textContent = "YOU LOSE :("
         startingScore = startingScore - 10;
         score.textContent = startingScore;
@@ -47,13 +119,97 @@ function compareHigh() {
     }
 }
 
+// function to compare lower value
 function compareLow() {
-
-    if (player.value > dealer.value) {
+    var dealerValue = 0
+    var playerValue = 0
+    switch (dealer.value) {
+        case "2":
+            dealerValue = 2;
+            break;
+        case "3":
+            dealerValue = 3;
+            break;
+        case "4":
+            dealerValue = 4;
+            break;
+        case "5":
+            dealerValue = 5;
+            break;
+        case "6":
+            dealerValue = 6;
+            break;
+        case "7":
+            dealerValue = 7;
+            break;
+        case "8":
+            dealerValue = 8;
+            break;
+        case "9":
+            dealerValue = 9;
+            break;
+        case "10":
+            dealerValue = 10;
+            break;
+        case "JACK":
+            dealerValue = 11;
+            break;
+        case "QUEEN":
+            dealerValue = 12;
+            break;
+        case "KING":
+            dealerValue = 13
+            break;
+        case "ACE":
+            dealerValue = 14
+            break;
+    }
+    switch (player.value) {
+        case "2":
+            playerValue = 2;
+            break;
+        case "3":
+            playerValue = 3;
+            break;
+        case "4":
+            playerValue = 4;
+            break;
+        case "5":
+            playerValue = 5;
+            break;
+        case "6":
+            playerValue = 6;
+            break;
+        case "7":
+            playerValue = 7;
+            break;
+        case "8":
+            playerValue = 8;
+            break;
+        case "9":
+            playerValue = 9;
+            break;
+        case "10":
+            playerValue = 10;
+            break;
+        case "JACK":
+            playerValue = 11;
+            break;
+        case "QUEEN":
+            playerValue = 12;
+            break;
+        case "KING":
+            playerValue = 13
+            break;
+        case "ACE":
+            playerValue = 14
+            break;
+    }
+    if (playerValue > dealerValue) {
         winLose.textContent = "YOU LOSE :("
         startingScore = startingScore - 10;
         score.textContent = startingScore;
-    } else if (player.value < dealer.value) {
+    } else if (playerValue < dealerValue) {
         winLose.textContent = "WINNER!!!"
         startingScore = startingScore + 10;
         score.textContent = startingScore;
@@ -61,7 +217,6 @@ function compareLow() {
         winLose.textContent = "TIE GAME"
     }
 }
-
 
 // event listener to draw new card for the dealer
 drawCard.addEventListener("click", function () {
@@ -94,13 +249,11 @@ drawCard.addEventListener("click", function () {
             document.querySelector(".card-img").appendChild(cardImg);
         });
 
-
-
     higher.disabled = false;
     lower.disabled = false;
 });
 
-
+// event listener for clicking higher btn
 higher.addEventListener("click", function () {
     higher.disabled = true
     playerImg = document.querySelector(".player-card-img img");
@@ -122,12 +275,9 @@ higher.addEventListener("click", function () {
         });
     drawCard.disabled = false
     lower.disabled = true
-
-
-
 });
 
-
+// event listener for clicking lower btn
 lower.addEventListener("click", function () {
     lower.disabled = true
     playerImg = document.querySelector(".player-card-img img");
