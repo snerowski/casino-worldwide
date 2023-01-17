@@ -22,6 +22,8 @@ window.onload = function(){
     if(localStorage.getItem("slotsResults")){
         var storage = JSON.parse(localStorage.getItem("slotsResults"));
         console.log(storage);
+        timesWon = storage.wins;
+        numbersSpun = storage.spins;
     }
    
 }
@@ -61,12 +63,13 @@ slotHandleEl.addEventListener("click", function(){
         }
         window.alert("You win");
         console.log(timesWon);
-        var winRate = {
-            spins: numbersSpun,
-            wins: timesWon
-        }
-        localStorage.setItem("slotsResults",JSON.stringify(winRate));
+        
     }
+    var winRate = {
+        spins: numbersSpun,
+        wins: timesWon
+    }
+    localStorage.setItem("slotsResults",JSON.stringify(winRate));
 });
 
 function selectImg (input, slot){
