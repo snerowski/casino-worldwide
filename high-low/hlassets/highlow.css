@@ -38,7 +38,7 @@ border-right: 1px solid white;
 
 /* CONTAINS THE WHOLE GAME */
 .game-container{
-    margin: 2% 2%;
+    margin: 1% 2%;
     color: rgb(255, 239, 239);
 }
 
@@ -59,7 +59,7 @@ border-right: 1px solid white;
 
 .dealer-title h2,
 .player-title h2{
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin: 0;
 }
 
@@ -128,8 +128,8 @@ margin-bottom: 2%;
 }
 
 .draw-card button {
-    width: 130px;
-    height: 50px;
+    width: 120px;
+    height: 40px;
 }
 
 /* BUTTON/SCORE LAYOUT */
@@ -157,12 +157,22 @@ margin-bottom: 2%;
     width: 40vw;
     height: 100px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.higher {
+    margin-right: 1%;
 }
 
 .higher-lower-card button{
-    width: 150px;
-    height: 50px;
+    width: 110px;
+    height: 40px;
+}
+
+
+.draw{
+    width: 110px;
+    height: 40px;
 }
 
 .win-lose {
@@ -188,8 +198,90 @@ margin-bottom: 2%;
 }
 
 
+@media only screen and (max-width: 933px) {
+    .score p,
+    .win-lose p {
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    }
+
+    .directions {
+        font-size: 1.3rem;
+    }
+    
+
+}
+
+@media only screen and (max-width: 785px){
+    .score p,
+    .win-lose p {
+        font-size: 2rem;
+        text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    }
+
+    .directions {
+        font-size: 1.2rem;
+    }
+}
 
    
+@media only screen and (max-width: 635px){
+    .game-title {
+        font-size: 3rem;
+    }
+    
+    .score p,
+    .win-lose p {
+        font-size: 1.7rem;
+        text-shadow: 2px 2px 1px rgb(0, 0, 0);
+    }
+    
+    
+    .higher-lower-card button{
+        width: 90px;
+        height: 40px;
+    }
 
+    .draw-card button{
+        width: 110px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .navbar a{
+        font-size: .9rem;
+}
+
+.score p,
+.win-lose p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+}
+
+    @media only screen and (max-width: 415px){
+
+       
+        .score p,
+        .win-lose p {
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 1px rgb(0, 0, 0);
+        }
+
+        .higher-lower-card button{
+            width: 70px;
+            height: 40px;
+        }
+
+        .draw-card button{
+            width: 80px;
+            height: 40px;
+            font-size: 12px;
+        }
+    
+}
 
 

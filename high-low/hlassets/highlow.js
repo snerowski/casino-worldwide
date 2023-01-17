@@ -43,7 +43,7 @@ function compareHigh() {
         startingScore = startingScore - 10;
         score.textContent = startingScore;
     } else {
-        winLose.textContent = "TIE GAME BUDDY"
+        winLose.textContent = "TIE GAME"
     }
 }
 
@@ -58,7 +58,7 @@ function compareLow() {
         startingScore = startingScore + 10;
         score.textContent = startingScore;
     } else {
-        winLose.textContent = "TIE GAME BUD"
+        winLose.textContent = "TIE GAME"
     }
 }
 
@@ -74,26 +74,26 @@ drawCard.addEventListener("click", function () {
     }
     clear()
     // delaying the card from appearing
-    setTimeout(function () {
-        // api link
-        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
-            // taking api data converting to json
-            .then(function (response) {
-                return response.json();
-            })
-            // storing json in data param
-            .then(function (data) {
-                console.log(data)
-                // storing card from json in global var
-                dealer = data.cards[0];
-                // creating new img to add to div
-                var cardImg = document.createElement("img");
-                // setting new img to img from card var
-                cardImg.src = dealer.image;
-                // adding new img to div
-                document.querySelector(".card-img").appendChild(cardImg);
-            });
-    }, 100)
+
+    // api link
+    fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+        // taking api data converting to json
+        .then(function (response) {
+            return response.json();
+        })
+        // storing json in data param
+        .then(function (data) {
+            console.log(data)
+            // storing card from json in global var
+            dealer = data.cards[0];
+            // creating new img to add to div
+            var cardImg = document.createElement("img");
+            // setting new img to img from card var
+            cardImg.src = dealer.image;
+            // adding new img to div
+            document.querySelector(".card-img").appendChild(cardImg);
+        });
+
 
 
     higher.disabled = false;
@@ -107,22 +107,22 @@ higher.addEventListener("click", function () {
     if (playerImg) {
         playerImg.remove();
     }
-    setTimeout(function () {
-        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                player = data.cards[0];
-                var cardImg = document.createElement("img");
-                cardImg.src = player.image;
-                document.querySelector(".player-card-img").appendChild(cardImg);
-                compareHigh()
-                // console.log(data)
-            });
-        drawCard.disabled = false
-        lower.disabled = true
-    }, 100)
+
+    fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            player = data.cards[0];
+            var cardImg = document.createElement("img");
+            cardImg.src = player.image;
+            document.querySelector(".player-card-img").appendChild(cardImg);
+            compareHigh()
+            // console.log(data)
+        });
+    drawCard.disabled = false
+    lower.disabled = true
+
 
 
 });
@@ -134,21 +134,21 @@ lower.addEventListener("click", function () {
     if (playerImg) {
         playerImg.remove();
     }
-    setTimeout(function () {
-        fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                player = data.cards[0];
-                var cardImg = document.createElement("img");
-                cardImg.src = player.image;
-                document.querySelector(".player-card-img").appendChild(cardImg);
-                compareLow()
-            });
-        drawCard.disabled = false
-        higher.disabled = true
-    }, 100)
+
+    fetch("https://deckofcardsapi.com/api/deck/new/draw/?count=1")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            player = data.cards[0];
+            var cardImg = document.createElement("img");
+            cardImg.src = player.image;
+            document.querySelector(".player-card-img").appendChild(cardImg);
+            compareLow()
+
+            drawCard.disabled = false
+            higher.disabled = true
+        }, 100)
 });
 
 
