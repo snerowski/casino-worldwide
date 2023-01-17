@@ -10,28 +10,28 @@ A casino-game webpage built with HTML, CSS, Bootstrap and JavaScript.  The user 
 <details>
 <summary>Homepage</summary>
 
-![Web Screenshot](![Alt text](screenshots/homepage.png))
+![homepage view](screenshots/homepage.png))
 </details>
 
 <details>
 <summary>Bingo</summary>
 
-![Web Screenshot](![Alt text](screenshots/bingo.png))
+![bingo view](screenshots/bingo.png))
 </details>
 <details>
 <summary>High Low</summary>
 
-![Web Screenshot](![Alt text](screenshots/highlow.png))
+![high low view](screenshots/highlow.png))
 </details>
 <details>
 <summary>Blackjack</summary>
 
-![Web Screenshot](![Alt text](screenshots/blackjack.png))
+![blackjack view](screenshots/blackjack.png))
 </details>
 <details>
 <summary>Roulette</summary>
 
-![Web Screenshot](![Alt text](screenshots/roulette.png))
+![roulette view](screenshots/roulette.png))
 </details>
 
 #
