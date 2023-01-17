@@ -1,0 +1,13 @@
+*{
+    font-family:Righteous,'Cinzel','Noto Serif Toto','serif' ;
+    
+}
+
+h1 {
+    font-size: 85px;
+    
+}
+.card {
+    background-color: grey;
+    margin-top: 20px;
+}
