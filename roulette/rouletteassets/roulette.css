@@ -99,9 +99,9 @@ p, h2, li{
 
 img{
     position: absolute;
-    width: 200px;
-    margin-left: 200px;
-    margin-top: 100px;
+    width: 100px;
+    top: 45%;
+    right: -8%;
 }
 
 @keyframes rotate {

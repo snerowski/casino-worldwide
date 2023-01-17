@@ -82,7 +82,7 @@ var pieColors = [
                  "#ff0000", 
                  "#000000",
                 ]
-let myChart = new myChart(wheel, {
+let myChart = new Chart(rouletteWheel, {
     plugins: [ChartDataLabels],
     type: "pie",
     data: {
@@ -92,7 +92,7 @@ let myChart = new myChart(wheel, {
             {
                 backgroundColor: pieColors,
                 data: data,
-            },
+            }
         ],
     },
     options: {
@@ -107,7 +107,7 @@ let myChart = new myChart(wheel, {
                 color: "#ffffff",
                 formatter: (_,context) =>
                 context.chart.data.labels[context.dataIndex],
-                font: {size: 18},
+                font: {size: 10},
             },
         },
     },
