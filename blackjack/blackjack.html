@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Serif+Toto&family=Righteous&display=swap" rel="stylesheet">
     <link href="./bjassets/blackjack.css" rel="stylesheet">
 </head>
-<body>
+<body onload="onYoutubeIframeAPIReady()">
     <!-- navigation bar add links to other games after games completed -->
     <nav class="navbar" id="nav-bg">
         <div class="container-fluid d-flex justify-content-between">
@@ -47,12 +47,20 @@
 
         <button type="button" id="hit" class="btn btn-danger">Hit</button>
         <button type="button" id="stand" class="btn btn-secondary">Stand</button>
-
+        <button type="button" onclick="window.location.reload()" class="btn btn-primary">Replay</button>
 
 
 
     </main>
-
+    <br>
+    <br>
+    
+    <h2 class = "d-flex justify-content-center text-black">Dont know how to play?</h2> 
+    <p class = "d-flex justify-content-center text-black">no worries just check out this video tutorial</p>
+    <div id="video-container" class="d-flex justify-content-center">
+        <iframe id="video"  src=""   width="750" height="425" frameborder="0" allowfullscreen></iframe>
+        <div id="videoTitle"></div>
+    </div>    
 <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
