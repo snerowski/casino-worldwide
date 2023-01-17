@@ -13,10 +13,9 @@ score.textContent = startingScore;
 higher.disabled = true;
 lower.disabled = true;
 
-
+// function to update score in local storage
 function updateScore(newScore) {
     startingScore = newScore;
-    console.log(startingScore)
     score.textContent = newScore;
     localStorage.setItem("playerScore", newScore);
 }
