@@ -15,18 +15,19 @@
 <body>
     <nav class="navbar" id="nav-bg">
         <div class="container-fluid d-flex justify-content-between">
-              <a class="navbar-brand px-4 fs-2" href="#">Home</a>
+              <a class="navbar-brand px-4 fs-2" href="../index.html">Home</a>
             <div class="d-flex">
-              <a class="navbar-brand px-3" href="#">Bingo</a>
-              <a class="navbar-brand px-3" href="#">High low</a>
-              <a class="navbar-brand px-3" href="#">Roulette</a>
-              <a class="navbar-brand px-3" href="#">Slots</a>
+              <a class="navbar-brand px-3" href="../Bingo/bingo.html">Bingo</a>
+              <a class="navbar-brand px-3" href="../blackjack/blackjack.html">Blackjack</a>
+              <a class="navbar-brand px-3" href="../high-low/highlow.html">High low</a>
+              <a class="navbar-brand px-3" href="../roulette/roulette.html">Roulette</a>
+              <a class="navbar-brand px-3" href="../slots/slots.html">Slots</a>
              </div>
          </div>
         </nav>
     <header>
         <h1 class="d-flex justify-content-center fs-1 text-white title">  <!-- use title class to change font-size-->
-          It's roulette time, baby!!!
+          Roulette
         </h1>
     </header>
       <main class="game-container">  
@@ -38,8 +39,15 @@
                 </select>
                 <button type="spin" id="spin-button">Try your luck!</button>
             </div>
+            <div class="wrapper">
+                <div class="container">
+                    <canvas id="roulette-wheel"></canvas>
+                    <img src="./rouletteassets/roulette-img/spinner-arrow.png" alt="spinner-arrow"/>
+                </div>
+            </div>
+           
             
-            
+           
            
             <div class="results-box" id="results">
                 <h2>RESULT</h2>
@@ -87,7 +95,10 @@
             <button type="reset"><strong>RESET</strong></button>
         </div>
     </main>
-        
+            
+      
        <script src="./rouletteassets/roulette.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
     </body>
 </html>
