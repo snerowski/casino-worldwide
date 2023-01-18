@@ -9,7 +9,7 @@
     </head>
 
     <body id="body">
-        <header id="title" class="d-flex align-items-center">
+        <header id="title" class="row d-flex align-items-center">
             <h1 class="col-6 d-flex justify-content-start text-light">Worldwide Casino Slots</h1>
             <nav class="col-6 d-flex justify-content-end">             
                      
@@ -28,9 +28,11 @@
             </nav>       
         </header>
         
-        
-        <main class="row d-flex justify-content-center">
-            <h1 class=" d-flex justify-content-center text-dark m-3">Slots</h1>
+        <main class="row d-flex justify-content-center" id="main">
+            <div class="d-flex justify-content-center">
+                <h1 class=" d-flex justify-content-center lab m-3" id="top">Slots</h1>
+            </div>
+            
             <div class="row d-flex justify-content-center m-5 g-0"id="slots">
 
                 <div class="card col-2 mt-3" style="width:18rem">
@@ -47,8 +49,20 @@
                 </div>
             </div>
 
-            
+            <div class="d-flex justify-content-center">
+                <h3 class="col-4 justify-content-center lab" id="results"></h3>
+            </div>
 
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                  ScoreBoard
+                </div>
+                <ul class="list-group list-group-flush" >
+                  <li class="list-group-item"id="wins">Wins:</li>
+                  <li class="list-group-item"id="spins">Spins:</li>  
+                </ul>
+            </div>
+            
         </main>
         
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

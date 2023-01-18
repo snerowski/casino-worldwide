@@ -8,6 +8,9 @@ var slotOneEl = document.getElementById("slotOne");
 var slotTwoEl = document.getElementById("slotTwo");
 var slotThreeEl = document.getElementById("slotThree");
 var navDropdownMenu = document.getElementById("dropdownMenuButton");
+var resultsEl = document.getElementById("results")
+var winsEl = document.getElementById("wins");
+var spinsEl = document.getElementById("spins");
 
 var slotArray = [
     "banana", "cherry", "apple", "orange", "watermelon"
@@ -25,6 +28,8 @@ window.onload = function(){
         timesWon = storage.wins;
         numbersSpun = storage.spins;
     }
+    winsEl.textContent = "Wins: "+timesWon;
+    spinsEl.textContent = "Spins: "+numbersSpun;
    
 }
 
@@ -60,11 +65,16 @@ slotHandleEl.addEventListener("click", function(){
             timesWon = 1;
         }else{
             timesWon++;
+           
         }
-        window.alert("You win");
-        console.log(timesWon);
-        
+         resultsEl.setAttribute("style", "display: flex");
+        resultsEl.textContent = "You Win!";  
+    }else{
+        resultsEl.setAttribute("style", "display: none");
     }
+    winsEl.textContent = "Wins: "+timesWon;
+    spinsEl.textContent = "Spins: "+numbersSpun;
+
     var winRate = {
         spins: numbersSpun,
         wins: timesWon
