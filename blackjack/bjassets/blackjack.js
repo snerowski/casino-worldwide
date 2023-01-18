@@ -59,6 +59,9 @@ var hitbtn = document.querySelector('#hit');
 var standBtn = document.querySelector('#stand');
 var totalValue = 0;
 var dealerValue = 0;
+var bjWins
+var bjLosses
+var bjTies
 //make the dealer and the user start with two cards? at least make the dealer start with 2 one hidden
 // base the dealer choices of hitting on user totalValue that way itll only try to get higher than that 
 
@@ -101,7 +104,21 @@ window.onload = function(){
     dealCardsToDealer();
     hit();
     hit();
-}
+    var nothing
+    nothing = localStorage.getItem("bjScores");
+    if(localStorage.getItem("bjScores")){
+        var scoreStorage = JSON.parse(localStorage.getItem("bjScores"));
+        console.log(scoreStorage)
+        bjWins = scoreStorage.wins;
+        bjLosses = scoreStorage.Losses;
+        bjTies = scoreStorage.ties;
+
+}else{
+        bjWins = 0;
+        bjLosses= 0;
+        bjTies= 0;
+    
+}}
 
 
 function checkBust (){
@@ -138,6 +155,7 @@ standBtn.addEventListener("click",function(){
         winMessage.innerHTML = "YOU WON!";
         winMessage.classList.add("win-message");
         document.getElementById("user-cards").appendChild(winMessage);
+        addWin()
     }else {
         dealerHit();
 
@@ -147,36 +165,74 @@ standBtn.addEventListener("click",function(){
         dealerMessageLost.innerHTML = "YOU WON Dealer busted!";
         dealerMessageLost.classList.add ("win-message");
         document.getElementById("user-cards").appendChild(dealerMessageLost);
+        addWin();
     } 
     if (dealerValue === 21) {
         var dealearWonMessage = document.createElement("h2");
         dealearWonMessage.innerHTML = "DEALER WON SORRY TRY AGAIN";
-        dealearWonMessage.classList.add("win-message");
+        dealearWonMessage.classList.add("loss-message");
         document.getElementById("user-cards").appendChild(dealearWonMessage);
+        addLoss();
     } if (dealerValue === totalValue) {
         var tieMessage = document.createElement("h2");
         tieMessage.innerHTML = "ITS A TIE!";
-        tieMessage.classList.add("win-message");
+        tieMessage.classList.add("tie-message");
         document.getElementById("user-cards").appendChild(tieMessage);
+        addTie();
     } if (dealerValue > totalValue && dealerValue < 21) {
         var dealearWonMessage = document.createElement("h2");
         dealearWonMessage.innerHTML = "DEALER WON SORRY TRY AGAIN";
-        dealearWonMessage.classList.add("win-message");
+        dealearWonMessage.classList.add("loss-message");
         document.getElementById("user-cards").appendChild(dealearWonMessage);
+        addLoss();
+        
+        
     }
-    
+    var bjStats = {
+        wins:bjWins,
+        Losses:bjLosses,
+        ties:bjTies,
+    }
+    localStorage.setItem("bjScores", JSON.stringify(bjStats))
 })
+
+// local storage add to index.html when done 
+
+
+
+function addWin(){
+    if(bjWins == null){
+        bjWins = 1
+    }else {
+        bjWins++;
+    };
+    // console.log(bjStats.bjWins)
+}
+function addLoss (){
+if(bjLosses == null) {
+    bjLosses = 1
+}else {
+    bjLosses++;
+};
+}
+function addTie(){
+    if(bjTies == null) {
+        bjTies = 1
+    }else {
+        bjTies++;
+    };
+}
 
 
 
 
 // youtube api stuff down here 
-var API_KEY = "AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk"
-var VIDEO_ID = "xjqTIzYkGdI"
+// var API_KEY = "AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk"
+// var VIDEO_ID = "xjqTIzYkGdI"
 
 
-fetch('https://www.googleapis.com/youtube/v3/videos?id=$xjqTIzYkGdI&key=AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk&part=snippet')
-.then(response => response.json())
-.then(data => {
-    document.getElementById('video').src = `https://www.youtube.com/embed/${VIDEO_ID}`;
-});
+// fetch('https://www.googleapis.com/youtube/v3/videos?id=$xjqTIzYkGdI&key=AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk&part=snippet')
+// .then(response => response.json())
+// .then(data => {
+//     document.getElementById('video').src = `https://www.youtube.com/embed/${VIDEO_ID}`;
+// });
