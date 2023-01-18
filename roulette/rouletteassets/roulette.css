@@ -101,9 +101,5 @@ p, h2, li{
     }
 }
 
-@media screen and (max-width: 768px) {
-    img {
-        margin-right: 200px;
-    }
-}
+
 
