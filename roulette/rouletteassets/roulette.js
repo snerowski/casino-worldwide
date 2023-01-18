@@ -2,6 +2,8 @@ const rouletteWheel = document.getElementById("roulette-wheel");
 const spinButton = document.getElementById("spin-button");
 const resultsBox = document.getElementById("results-box");
 const colorSelector = document.getElementById("color-selector");
+const winLose = document.getElementById("win-lose")
+const color = document.getElementById("color")
 const rotationValues = [
     { minDegree: 0, maxDegree: 12, value: 'Green'},
     { minDegree: 13, maxDegree: 24, value: 'Black' },
@@ -103,54 +105,29 @@ let myChart = new Chart(rouletteWheel, {
     
 });               
 
-function selectBlack() {
-    var black = "Black"
-    var red = "Red" 
-    var green = "Green"
 
-    if (selectBlack == black) {
-        results.textContent = "You Win!"
-    } else if (selectBlack == red) {
-        results.textContent = "You Lose!"
-    } else if (selectBlack == green) {
-        results.textContent = "You Lose!"
-    }
-};
-
-function selectRed() {
-    var black = "Black"
-    var red = "Red" 
-    var green = "Green"
-
-    if (selectRed == red) {
-        results.textContent = "You Win!"
-    } else if (selectRed == black) {
-        results.textContent = "You Lose!"
-    } else if (selectRed == green) {
-        results.textContent = "You Lose!"
-    }
-};
-
-function selectGreen() {
-    var black = "Black"
-    var red = "Red" 
-    var green = "Green"
-
-    if (selectGreen == green) {
-        results.textContent = "You Win!"
-    } else if (selectGreen == red) {
-        results.textContent = "You Lose!"
-    } else if (selectGreen == black) {
-        results.textContent = "You Lose!"
-    }
-}
 
 const valueGenerator = (angleValue) => {
-    for(let i of rotationValues){
-    if (angleValue >= i.minDegree && angleValue <= i.maxDegree){
-        results.innerHTML = `<p><strong>Result: ${i.value}</strong></p>`;
+   
+    
+    for(let i of rotationValues) {
+        var temp = i.value
+        var userChoice = colorSelector.value
+    if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
+        console.log(userChoice)
+        console.log(temp)
+        if (userChoice === temp) {
+            winLose.innerHTML = "YOU WIN"
+            console.log("YOU WIN")
+        } else {
+            winLose.innerHTML = "YOU LOSE"
+            console.log("YOU LOSE")
+        }
+        color.innerHTML = temp
+        // results.innerHTML = `<p><strong>RESULT: ${i.value} </strong></p>`;
         spinButton.disabled = false;
         break;
+        
     }   
   }
 };
@@ -159,8 +136,10 @@ let count = 0;
 
 let resultValue = 101;
 
+
 spinButton.addEventListener("click", () =>{
     spinButton.disabled = true;
+   
 
     let randomDegree = Math.floor(Math.random() *
     (355 - 0 + 1) + 0);
@@ -183,6 +162,7 @@ spinButton.addEventListener("click", () =>{
         count= 0;
         resultValue = 101;
     }
+    
     }, 10);
 });
 

@@ -53,6 +53,8 @@ body{
     font-size: xx-large;
     position: absolute;
     margin-right: 1000px;
+    display: flex;
+    flex-direction: column;
 }
 .wrapper{
     width: 800px;
