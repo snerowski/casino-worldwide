@@ -227,12 +227,12 @@ function addTie(){
 
 
 // youtube api stuff down here 
-// var API_KEY = "AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk"
-// var VIDEO_ID = "xjqTIzYkGdI"
+var API_KEY = "AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk"
+var VIDEO_ID = "xjqTIzYkGdI"
 
 
-// fetch('https://www.googleapis.com/youtube/v3/videos?id=$xjqTIzYkGdI&key=AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk&part=snippet')
-// .then(response => response.json())
-// .then(data => {
-//     document.getElementById('video').src = `https://www.youtube.com/embed/${VIDEO_ID}`;
-// });
+fetch('https://www.googleapis.com/youtube/v3/videos?id=$xjqTIzYkGdI&key=AIzaSyBG3vALD8b7OdOuaeCTFdeyGC-PiRoXlsk&part=snippet')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('video').src = `https://www.youtube.com/embed/${VIDEO_ID}`;
+});
