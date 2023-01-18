@@ -4,6 +4,15 @@ const resultsBox = document.getElementById("results-box");
 const colorSelector = document.getElementById("color-selector");
 const winLose = document.getElementById("win-lose")
 const color = document.getElementById("color")
+var score = document.querySelector(".score-number")
+var startingScore = 100
+
+function updateScore(newScore) {
+    startingScore = newScore;
+    console.log(startingScore)
+    score.textContent = newScore;
+    localStorage.setItem("rouletteScore", newScore);
+}
 const rotationValues = [
     { minDegree: 0, maxDegree: 12, value: 'Green'},
     { minDegree: 13, maxDegree: 24, value: 'Black' },
@@ -118,13 +127,15 @@ const valueGenerator = (angleValue) => {
         console.log(temp)
         if (userChoice === temp) {
             winLose.innerHTML = "YOU WIN"
+            updateScore(startingScore + 50)
             console.log("YOU WIN")
         } else {
             winLose.innerHTML = "YOU LOSE"
+            updateScore(startingScore -20)
             console.log("YOU LOSE")
         }
         color.innerHTML = temp
-        // results.innerHTML = `<p><strong>RESULT: ${i.value} </strong></p>`;
+        
         spinButton.disabled = false;
         break;
         
