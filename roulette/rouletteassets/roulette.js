@@ -1,71 +1,75 @@
 const rouletteWheel = document.getElementById("roulette-wheel");
 const spinButton = document.getElementById("spin-button");
+const resultsBox = document.getElementById("results-box");
+const colorSelector = document.getElementById("color-selector");
 const rotationValues = [
-    { minDegree: 0, maxDegree: 12, value: 1 },
-    { minDegree: 13, maxDegree: 24, value: 0 },
-    { minDegree: 25, maxDegree: 36, value: 30 },
-    { minDegree: 37, maxDegree: 48, value: 29 },
-    { minDegree: 49, maxDegree: 60, value: 28 },
-    { minDegree: 61, maxDegree: 72, value: 27 },
-    { minDegree: 73, maxDegree: 84, value: 26 },
-    { minDegree: 85, maxDegree: 96, value: 25 },
-    { minDegree: 97, maxDegree: 108, value: 24 },
-    { minDegree: 109, maxDegree: 120, value: 23 },
-    { minDegree: 121, maxDegree: 132, value: 22 },
-    { minDegree: 133, maxDegree: 144, value: 21 },
-    { minDegree: 145, maxDegree: 156, value: 20 },
-    { minDegree: 157, maxDegree: 168, value: 19 },
-    { minDegree: 169, maxDegree: 180, value: 18 },
-    { minDegree: 181, maxDegree: 192, value: 17 },
-    { minDegree: 193, maxDegree: 204, value: 16 },
-    { minDegree: 205, maxDegree: 216, value: 15 },
-    { minDegree: 217, maxDegree: 228, value: 14 },
-    { minDegree: 229, maxDegree: 240, value: 13 },
-    { minDegree: 241, maxDegree: 252, value: 12 },
-    { minDegree: 253, maxDegree: 264, value: 11 },
-    { minDegree: 265, maxDegree: 276, value: 10 },
-    { minDegree: 277, maxDegree: 288, value: 9 },
-    { minDegree: 289, maxDegree: 300, value: 8 },
-    { minDegree: 301, maxDegree: 312, value: 7 },
-    { minDegree: 313, maxDegree: 324, value: 6 },
-    { minDegree: 325, maxDegree: 336, value: 5 },
-    { minDegree: 337, maxDegree: 348, value: 4 },
-    { minDegree: 349, maxDegree: 360, value: 3 },
+    { minDegree: 0, maxDegree: 12, value: 'Green'},
+    { minDegree: 13, maxDegree: 24, value: 'Black' },
+    { minDegree: 25, maxDegree: 36, value: 'Red' },
+    { minDegree: 37, maxDegree: 48, value: 'Black' },
+    { minDegree: 49, maxDegree: 60, value: 'Red' },
+    { minDegree: 61, maxDegree: 72, value: 'Black' },
+    { minDegree: 73, maxDegree: 84, value: 'Red' },
+    { minDegree: 85, maxDegree: 96, value: 'Black' },
+    { minDegree: 97, maxDegree: 108, value: 'Red' },
+    { minDegree: 109, maxDegree: 120, value: 'Black' },
+    { minDegree: 121, maxDegree: 132, value: 'Red' },
+    { minDegree: 133, maxDegree: 144, value: 'Black' },
+    { minDegree: 145, maxDegree: 156, value: 'Red' },
+    { minDegree: 157, maxDegree: 168, value: 'Black' },
+    { minDegree: 169, maxDegree: 180, value: 'Red' },
+    { minDegree: 181, maxDegree: 192, value: 'Black' },
+    { minDegree: 193, maxDegree: 204, value: 'Red' },
+    { minDegree: 205, maxDegree: 216, value: 'Black'},
+    { minDegree: 217, maxDegree: 228, value: 'Red' },
+    { minDegree: 229, maxDegree: 240, value: 'Black' },
+    { minDegree: 241, maxDegree: 252, value: 'Red' },
+    { minDegree: 253, maxDegree: 264, value: 'Black' },
+    { minDegree: 265, maxDegree: 276, value: 'Red' },
+    { minDegree: 277, maxDegree: 288, value: 'Black' },
+    { minDegree: 289, maxDegree: 300, value: 'Red' },
+    { minDegree: 301, maxDegree: 312, value: 'Black' },
+    { minDegree: 313, maxDegree: 324, value: 'Red' },
+    { minDegree: 325, maxDegree: 336, value: 'Black' },
+    { minDegree: 337, maxDegree: 348, value: 'Red' },
+    { minDegree: 349, maxDegree: 360, value: 'Black' },
+    { minDegree: 361, maxDegree: 372, value: 'Red' },
+    { minDegree: 373, maxDegree: 384, value: 'Green'}
 ];
 
 const data = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, ];
 
 var pieColors = [
-                 "#ff0000", 
-                 "#000000", 
-                 "#008000",
-                 "#ff0000",
-                 "#000000",
-                 "#ff0000",
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#008000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
-                 "#ff0000", 
-                 "#000000",
+                 "Red", 
+                 "Black", 
+                 "Green",
+                 "Red",
+                 "Black",
+                 "Red",
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Green",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
+                 "Red", 
+                 "Black",
                 ]
 let myChart = new Chart(rouletteWheel, {
     plugins: [ChartDataLabels],
@@ -99,10 +103,52 @@ let myChart = new Chart(rouletteWheel, {
     
 });               
 
+function selectBlack() {
+    var black = "Black"
+    var red = "Red" 
+    var green = "Green"
+
+    if (selectBlack == black) {
+        results.textContent = "You Win!"
+    } else if (selectBlack == red) {
+        results.textContent = "You Lose!"
+    } else if (selectBlack == green) {
+        results.textContent = "You Lose!"
+    }
+};
+
+function selectRed() {
+    var black = "Black"
+    var red = "Red" 
+    var green = "Green"
+
+    if (selectRed == red) {
+        results.textContent = "You Win!"
+    } else if (selectRed == black) {
+        results.textContent = "You Lose!"
+    } else if (selectRed == green) {
+        results.textContent = "You Lose!"
+    }
+};
+
+function selectGreen() {
+    var black = "Black"
+    var red = "Red" 
+    var green = "Green"
+
+    if (selectGreen == green) {
+        results.textContent = "You Win!"
+    } else if (selectGreen == red) {
+        results.textContent = "You Lose!"
+    } else if (selectGreen == black) {
+        results.textContent = "You Lose!"
+    }
+}
+
 const valueGenerator = (angleValue) => {
     for(let i of rotationValues){
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree){
-        resultValue.innerHTML = `<p>Value: ${i.value}</p>`;
+        results.innerHTML = `<p><strong>Result: ${i.value}</strong></p>`;
         spinButton.disabled = false;
         break;
     }   

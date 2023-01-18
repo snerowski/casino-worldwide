@@ -26,6 +26,7 @@ body{
     justify-content: center;
     padding-left: 350px;
     margin-top: 20px;
+    font-size: xx-large;
 }
 
 #spin-button{
@@ -48,6 +49,11 @@ body{
  padding: 0;   
 }
 
+#results{
+    font-size: xx-large;
+    position: absolute;
+    margin-right: 1000px;
+}
 .wrapper{
     width: 800px;
     height: 500px;
@@ -66,8 +72,8 @@ body{
 .results-box{
     display: flex;
     position: absolute;
-    margin-top: 750px;
-    margin-right: 850px
+    margin-top: 150px;
+    margin-left: 175px;
 }
 
 .rules-box{
@@ -75,6 +81,7 @@ body{
     margin-left: 550px;
     margin-top: 80px;
     margin-right: 20px;
+    font-size: xx-large;
     
 }
 
@@ -82,31 +89,9 @@ p, h2, li{
     color: white;
 }
 
-.score-list{
-    display: flex;
-    position: absolute;
-    margin-top: 80px;
-    margin-right: 3500px;
-    margin-left: 20px;
-}
-
-.reset-button{
-    display: flex;
-    position: absolute;
-    margin-top: 750px;
-    margin-right: 3500px;
-}
-
-img{
-    position: absolute;
-    width: 100px;
-    top: 45%;
-    right: -8%;
-}
-
 @keyframes rotate {
     100% {
-        transform: rotate(540deg);
+        transform: rotate(180deg);
     }
 }
 
