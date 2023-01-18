@@ -1,11 +1,14 @@
-var blackJack = document.getElementById("blackJack");
+
+var bjWinsEl = document.getElementById("bjWins");
+var bjTiesEl = document.getElementById("bjTies");
+var bjLossesEl = document.getElementById("bjLosses");
 var bingo = document.getElementById("bingo");
 var highLow = document.getElementById("highLow");
 var roulette = document.getElementById("roulette");
 var slotWinsEl = document.getElementById("slotWins");
 var slotSpinsEl = document.getElementById("slotSpins");
 var games = [
-    "slotsResults", "high-low-score", "rouletteWins", "bingoWins", "blackJackWins"
+    "slotsResults", "high-low-score", "bjScores"
 ]
 
 
@@ -25,8 +28,8 @@ window.onload = function(){
             roulette.textContent = "Wins: "+ storage;
         }else if(element === "bingoWins"){
             bingo.textContent === "Wins: " + storage;
-        }else if(element === "blackJackWins"){
-            blackJack.textContent === "Score: "+ storage
+        }else if(element === "bjScores"){
+            setBlackJack(storage);
         }
     }
     });
@@ -47,4 +50,14 @@ function setSlots(slotsStorage){
     slotSpins = slotsStorage.spins;
     slotWinsEl.textContent = "Wins: "+slotWins;
     slotSpinsEl.textContent = "Spins: "+slotSpins;
+}
+
+function setBlackJack(blackjackStorage){
+    bjWins = blackjackStorage.wins;
+    bjTies = blackjackStorage.ties;
+    bjLosses = blackjackStorage.Losses;
+    bjLossesEl.textContent = "Losses: " + bjLosses;
+    bjTiesEl.textContent = "Ties: " + bjTies;
+    bjWinsEl.textContent = "Wins: " + bjWins;
+
 }

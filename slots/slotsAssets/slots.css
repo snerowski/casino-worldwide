@@ -13,6 +13,7 @@
     background-color: black;
     border: solid;
     border-radius: 1rem;
+    max-width: 80rem;
 }
 
 .slotImg{
