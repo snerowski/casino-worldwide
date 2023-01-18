@@ -69,7 +69,11 @@ body{
     border-radius: 1em;
     box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
 }
-
+.score{
+    position: absolute;
+    margin-right: 3000px;
+    font-size: 80px;
+}
 
 .results-box{
     display: flex;

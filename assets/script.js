@@ -8,7 +8,7 @@ var roulette = document.getElementById("roulette");
 var slotWinsEl = document.getElementById("slotWins");
 var slotSpinsEl = document.getElementById("slotSpins");
 var games = [
-    "slotsResults", "high-low-score", "bjScores"
+    "slotsResults", "high-low-score", "bjScores", "rouletteScore"
 ]
 
 
@@ -24,8 +24,8 @@ window.onload = function(){
             setSlots(storage);
         }else if(element === "high-low-score"){
             highLow.textContent = "Highscore: "+ storage;
-        }else if (element === "rouletteWins"){
-            roulette.textContent = "Wins: "+ storage;
+        }else if (element === "rouletteScore"){
+            roulette.textContent = "Score:"+ storage;
         }else if(element === "bingoWins"){
             bingo.textContent === "Wins: " + storage;
         }else if(element === "bjScores"){
