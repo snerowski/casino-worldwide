@@ -4,11 +4,27 @@
 }
 
 h1 {
-    font-size: 85px;
-    
+    font-size: 6rem;
+    /* color: transparent; */
+    text-shadow: 4px 4px 10px rgb(134, 0, 0), 5px 5px 10px rgb(15, 251, 255);
 }
+
 .card {
     background-color: grey;
     margin-top: 20px;
 }
 
+.navbar-brand{
+    text-shadow: 4px 4px 10px rgb(134, 0, 0), 5px 5px 10px rgb(15, 251, 255);
+    color: white;
+}
+
+
+.navbar-brand:hover{
+    color: rgb(255, 151, 198);
+}
+
+.navbar-brand:active {
+    color: hotpink;
+    text-shadow: 2px 2px 10px white;
+}
