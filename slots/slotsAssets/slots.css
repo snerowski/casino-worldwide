@@ -21,3 +21,16 @@
     border-radius: 1rem;
 }
 
+.lab{
+    width: 30rem;
+    border: solid;
+    border-radius: 1rem;
+    background-color: goldenrod;
+    color: black;
+}
+#results{
+    display: none;
+}
+ #main{
+    margin-top: 6em;
+ }
